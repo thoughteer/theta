@@ -3,7 +3,6 @@ import { Eye } from './eye';
 import { Ground } from './ground';
 import { Head } from './head';
 import { Leg } from './leg';
-import { Loader } from './loader';
 import { Mode } from './mode';
 import { Mouth } from './mouth';
 import { Player } from './player';
@@ -12,9 +11,7 @@ import { Sunglasses } from './sunglasses';
 import { Tail } from './tail';
 import { Wing } from './wing';
 
-const loader = new Loader(document.getElementById('loader')!);
-
-const player = new Player('./assets/loop.ogg', () => loader.hide());
+const player = new Player(document.getElementById('loop')! as HTMLAudioElement);
 
 const mode = new Mode(player);
 

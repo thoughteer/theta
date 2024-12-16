@@ -6,8 +6,13 @@
         <title>Theta</title>
         <link rel="stylesheet" href="/stylesheets/content.css">
         <link rel="stylesheet" href="/stylesheets/hex.css">
+        <script type="module" src="/scripts/index.ts"></script>
     </head>
     <body>
+        <audio id="loop">
+            <source src="./assets/loop.aac" type="audio/aac"/>
+            <source src="./assets/loop.ogg" type="audio/ogg"/>
+        </audio>
         <div class="frame">
             <div class="scene">
                 <div id="background"></div>
@@ -433,6 +438,5 @@
             </div>
             <div id="loader">ϴ</div>
         </div>
-        <script type="module" src="/scripts/index.ts"></script>
     </body>
 </html>

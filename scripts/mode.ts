@@ -7,6 +7,7 @@ export class Mode {
     fps: number = 50;
     dq: number = this.bpm / (60 * this.fps);
 
+    toggling: boolean = false;
     idle: boolean = true;
     phi: number = 0;
 
@@ -15,12 +16,18 @@ export class Mode {
     }
 
     toggle(): void {
-        this.player.toggle();
-
-        this.idle = !this.idle;
-        if (!this.idle) {
-            this.phi = 0;
+        if (this.toggling) {
+            return;
         }
+
+        this.toggling = true;
+        this.player.toggle(() => {
+            this.toggling = false;
+            this.idle = !this.idle;
+            if (!this.idle) {
+                this.phi = 0;
+            }
+        });
     }
 
     update(): void {

@@ -27,35 +27,6 @@ body {
     transform: scale(0.921875, 1.0);
 }
 
-#loader {
-    background: #FFFFFF;
-    color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    font-family: "Roboto", Arial, sans-serif;
-    font-size: 40em;
-    position: absolute;
-    left: -50%;
-    top: -50%;
-    width: 200%;
-    height: 200%;
-    animation-name: spin;
-    animation-duration: 500ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out; 
-}
-
-@keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
-
 #background {
     position: absolute;
 }

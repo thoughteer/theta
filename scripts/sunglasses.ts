@@ -19,6 +19,10 @@ export class Sunglasses implements Updatable {
         if (this.mode.idle) {
             this.x = 0.5 * this.x;
             this.y = 0.5 * this.y;
+            if (this.mode.toggling) {
+                this.x += 2 * (Math.random() - 0.5);
+                this.y -= Math.random();
+            }
         } else {
             this.x = 0.5 * (this.x + 2 * Math.sin(this.mode.phi / 4));
             this.y = 0.5 * (this.y - 52 - Math.cos(this.mode.phi / 2));
