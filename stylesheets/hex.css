@@ -1,0 +1,97 @@
+.hex {
+    --x-outline: 0.5px;
+    position: absolute;
+    left: calc(-0.5em - var(--x-outline));
+    top: calc(-0.5em - var(--x-outline));
+    height: 1em;
+    width: 1em;
+    padding: var(--x-outline);
+}
+
+.hex:before {
+    --x-inline: 0.5px;
+    content: '';
+    background-color: #000000;
+    display: block;
+    position: relative;
+    left: calc(-0.5em + 2 * var(--x-inline));
+    top: calc(-0.5em + 2 * var(--x-inline));
+    height: calc(2em - 4 * var(--x-inline));
+    width: calc(2em - 4 * var(--x-inline));
+}
+
+.hex {
+    --x-shape: 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%;
+    -webkit-clip-path: polygon(var(--x-shape));
+    clip-path: polygon(var(--x-shape));
+}
+
+.hex:before {
+    --x-shape: 0% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 0%, 50% 25%, 75% 37.5%, 75% 62.5%, 50% 75%, 25% 62.5%, 25% 37.5%, 50% 25%;
+    -webkit-clip-path: polygon(var(--x-shape));
+    clip-path: polygon(var(--x-shape));
+}
+
+.hex.white {
+    background-color: #FFFFFF;
+}
+
+.hex.black {
+    background-color: #2B2B2B;
+}
+
+.hex.reptile {
+    background: linear-gradient(30deg, #D1FF67 25%, #FEFB35 75%);
+}
+
+.hex.funk {
+    background: linear-gradient(30deg, #1900D97F 25%, #9955FF7F 75%);
+}
+
+.hex.size-0 {
+    font-size: 1em;
+}
+
+.hex.size-0.red {
+    background-color: #FF4B5D;
+}
+
+.hex.size-1 {
+    font-size: 2em;
+}
+
+.hex.size-1.red {
+    background-color: #F9374B;
+}
+
+.hex.size-2 {
+    font-size: 4em;
+}
+
+.hex.size-2.red {
+    background-color: #EF5968;
+}
+
+.hex.size-3 {
+    font-size: 8em;
+}
+
+.hex.size-3.red {
+    background-color: #C81C2C;
+}
+
+.hex.size-4 {
+    font-size: 16em;
+}
+
+.hex.size-4.red {
+    background-color: #DD3949;
+}
+
+.hex.size-5 {
+    font-size: 32em;
+}
+
+.hex.size-5.red {
+    background-color: #FE5161;
+}

@@ -1,0 +1,561 @@
+body {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.frame {
+    position: absolute;
+    width: 100vmin;
+    height: 100vmin;
+    overflow: hidden;
+    font-size: 1.25vmin;
+}
+
+.scene {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.921875, 1.0);
+}
+
+#loader {
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 40em;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+#background {
+    position: absolute;
+}
+
+#foreground {
+    position: absolute;
+    top: 112em;
+}
+
+.figure {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 8em);
+}
+
+.body {
+    position: absolute;
+}
+
+.torso {
+    position: absolute;
+}
+
+.neck {
+    position: absolute;
+    top: -8em;
+}
+
+#head {
+    position: absolute;
+}
+
+.head {
+    position: absolute;
+    top: -24em;
+}
+
+.ears {
+    position: absolute;
+    top: -8em;
+}
+
+.ear-L {
+    position: absolute;
+    left: -16em;
+}
+
+.ear-R {
+    position: absolute;
+    left: 16em;
+}
+
+.face {
+    position: absolute;
+}
+
+.horns {
+    position: absolute;
+    top: -16em;
+}
+
+.horn-3-L {
+    position: absolute;
+    top: 2em;
+    left: -4em;
+}
+
+.horn-3-R {
+    position: absolute;
+    top: 2em;
+    left: 4em;
+}
+
+.horn-3-C {
+    position: absolute;
+    top: 4em;
+}
+
+.horn-2-L {
+    position: absolute;
+    top: 4em;
+    left: -8em;
+}
+
+.horn-2-R {
+    position: absolute;
+    top: 4em;
+    left: 8em;
+}
+
+.horn-2-C {
+    position: absolute;
+}
+
+.horn-1-L {
+    position: absolute;
+    top: -2em;
+    left: -4em;
+}
+
+.horn-1-R {
+    position: absolute;
+    top: -2em;
+    left: 4em;
+}
+
+.orbits {
+    position: absolute;
+    top: -4em;
+}
+
+.orbit-L {
+    position: absolute;
+    left: -8em;
+}
+
+.orbit-R {
+    position: absolute;
+    left: 8em;
+}
+
+#eye-L {
+    position: absolute;
+}
+
+.eye-L {
+    position: absolute;
+}
+
+#eye-R {
+    position: absolute;
+}
+
+.eye-R {
+    position: absolute;
+}
+
+.nose {
+    position: absolute;
+    top: 4em;
+}
+
+.nostril-L {
+    position: absolute;
+    left: -4em;
+}
+
+.nostril-L-inside {
+    position: absolute;
+    left: 1em;
+    top: -0.5em;
+}
+
+.nostril-R {
+    position: absolute;
+    left: 4em;
+}
+
+.nostril-R-inside {
+    position: absolute;
+    left: -1em;
+    top: -0.5em;
+}
+
+#mouth {
+    position: absolute;
+}
+
+.mouth {
+    position: absolute;
+    top: 11em;
+}
+
+.bumps {
+    position: absolute;
+}
+
+.bumps-TL {
+    position: absolute;
+    left: -16em;
+    top: -8em;
+}
+
+.bumps-TL-0 {
+    position: absolute;
+    left: 4em;
+    top: 2em;
+}
+
+.bumps-TL-1 {
+    position: absolute;
+    left: 1em;
+    top: -0.5em;
+}
+
+.bumps-TL-2 {
+    position: absolute;
+    top: 1em;
+}
+
+.bumps-TR {
+    position: absolute;
+    left: 16em;
+    top: -8em;
+}
+
+.bumps-TR-0 {
+    position: absolute;
+    left: -4em;
+    top: 2em;
+}
+
+.bumps-TR-1 {
+    position: absolute;
+    left: -1em;
+    top: -0.5em;
+}
+
+.bumps-TR-2 {
+    position: absolute;
+    top: 1em;
+}
+
+.bumps-BL {
+    position: absolute;
+    left: -16em;
+    top: 8em;
+}
+
+.bumps-BL-1 {
+    position: absolute;
+    left: 2em;
+    top: 1em;
+}
+
+.bumps-BL-2 {
+    position: absolute;
+    top: -2em;
+}
+
+.bumps-BR {
+    position: absolute;
+    left: 16em;
+    top: 8em;
+}
+
+.bumps-BR-1 {
+    position: absolute;
+    left: -2em;
+    top: 1em;
+}
+
+.bumps-BR-2 {
+    position: absolute;
+    top: -2em;
+}
+
+.legs {
+    position: absolute;
+    top: 8em;
+}
+
+#leg-L {
+    position: absolute;
+}
+
+.leg-L {
+    position: absolute;
+    left: -8em;
+}
+
+#leg-R {
+    position: absolute;
+}
+
+.leg-R {
+    position: absolute;
+    left: 8em;
+}
+
+.toes {
+    position: absolute;
+    top: 4em;
+}
+
+.toe-1 {
+    position: absolute;
+    left: -4em;
+}
+
+.toe-2 {
+    position: absolute;
+}
+
+.toe-3 {
+    position: absolute;
+    left: 4em;
+}
+
+.toenail {
+    position: absolute;
+    top: 1em;
+}
+
+.arms {
+    position: absolute;
+}
+
+#arm-L {
+    position: absolute;
+}
+
+.arm-L {
+    position: absolute;
+    left: -4em;
+}
+
+#arm-R {
+    position: absolute;
+}
+
+.arm-R {
+    position: absolute;
+    left: 4em;
+    transform: scale(-1.0, 1.0);
+}
+
+.finger-1 {
+    position: absolute;
+    top: -2em;
+}
+
+.finger-2 {
+    position: absolute;
+    left: 2em;
+    top: -1em;
+}
+
+.finger-3 {
+    position: absolute;
+    left: 2em;
+    top: 1em;
+}
+
+.fingernail-1 {
+    position: absolute;
+    top: -0.5em;
+}
+
+.fingernail-2 {
+    position: absolute;
+    left: 0.5em;
+    top: -0.25em;
+}
+
+.fingernail-3 {
+    position: absolute;
+    left: 0.5em;
+    top: 0.25em;
+}
+
+.wings {
+    position: absolute;
+    top: -4em;
+}
+
+#wing-L {
+    position: absolute;
+}
+
+.wing-L {
+    position: absolute;
+    left: -8em;
+}
+
+#wing-R {
+    position: absolute;
+}
+
+.wing-R {
+    position: absolute;
+    left: 8em;
+    transform: scale(-1.0, 1.0);
+}
+
+.wing-section-0 {
+    position: absolute;
+    left: -8em;
+}
+
+.wing-section-1 {
+    position: absolute;
+    left: -16em;
+    top: 4em;
+}
+
+.wing-section-2 {
+    position: absolute;
+    left: -20em;
+    top: -2em;
+}
+
+.spike-0-0 {
+    position: absolute;
+    top: 8em;
+}
+
+.spike-0-1 {
+    position: absolute;
+    top: -8em;
+}
+
+.spike-0-2 {
+    position: absolute;
+    left: 8em;
+    top: -4em;
+}
+
+.spike-1-0 {
+    position: absolute;
+    top: 2em;
+    left: -4em;
+}
+
+.spike-1-1 {
+    position: absolute;
+    top: 4em;
+}
+
+.spike-1-2 {
+    position: absolute;
+    left: 4em;
+    top: 2em;
+}
+
+.spike-2-0 {
+    position: absolute;
+    top: 2em;
+    left: -4em;
+}
+
+.spike-2-1 {
+    position: absolute;
+    left: -4em;
+    top: -2em;
+}
+
+.spike-2-2 {
+    position: absolute;
+    top: -4em;
+}
+
+.spike-2-3 {
+    position: absolute;
+    left: 4em;
+    top: -2em;
+}
+
+.spike-2-4 {
+    position: absolute;
+    top: 4em;
+} 
+
+#sunglasses {
+    position: absolute;
+}
+
+.sunglasses {
+    cursor: pointer;
+    position: absolute;
+    top: 24em;
+}
+
+.lens-L {
+    position: absolute;
+    left: -8em;
+}
+
+.lens-R {
+    position: absolute;
+    left: 8em;
+}
+
+#tail {
+    position: absolute;
+}
+
+.tail {
+    position: absolute;
+    top: 8em;
+}
+
+.tail-section-0 {
+    position: absolute;
+    left: 0em;
+    top: 1em;
+}
+
+.tail-section-1 {
+    position: absolute;
+    left: 0em;
+    top: 2.5em;
+}
