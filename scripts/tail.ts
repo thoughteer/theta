@@ -18,8 +18,8 @@ export class Tail implements Updatable {
             this.x = 0.5 * (this.x + Math.sin(this.mode.phi));
             this.y = 0.5 * (this.y - 0.5 - Math.abs(Math.sin(this.mode.phi)));
         } else {
-            this.x = 0.5 * (this.x + 2 * Math.sin(this.mode.phi / 4));
-            this.y = 0.5 * (this.y - Math.abs(Math.sin(this.mode.phi / 4)));
+            this.x = 0.5 * (this.x + 8 * Math.sin(this.mode.phi / 4));
+            this.y = 0.5 * (this.y - 4 * Math.abs(Math.sin(this.mode.phi / 4)));
         }
 
         this.e.style.left = this.x + 'em';

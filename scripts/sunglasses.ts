@@ -25,7 +25,7 @@ export class Sunglasses implements Updatable {
             }
         } else {
             this.x = 0.5 * (this.x + 2 * Math.sin(this.mode.phi / 4));
-            this.y = 0.5 * (this.y - 52 - Math.cos(this.mode.phi / 2));
+            this.y = 0.5 * (this.y - 51 - Math.cos(this.mode.phi / 2));
         }
 
         this.e.style.left = this.x + 'em';
@@ -33,6 +33,12 @@ export class Sunglasses implements Updatable {
     }
 
     click(): void {
+        if (this.mode.idle) {
+            this.e.classList.remove('pulse');
+        } else {
+            this.e.classList.add('pulse');
+        }
+
         this.mode.toggle();
     }
 }

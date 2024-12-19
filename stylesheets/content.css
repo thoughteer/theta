@@ -497,7 +497,7 @@ body {
 .sunglasses {
     cursor: pointer;
     position: absolute;
-    top: 24em;
+    top: 23em;
 }
 
 .lens-L {
@@ -529,4 +529,14 @@ body {
     position: absolute;
     left: 0em;
     top: 2.5em;
+}
+
+.pulse {
+    animation: pulse 285.71875ms alternate infinite;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 80%
+    }
 }
