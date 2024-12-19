@@ -1,5 +1,6 @@
 import { Arm } from './arm';
 import { Eye } from './eye';
+import { Gem } from './gem';
 import { Ground } from './ground';
 import { Head } from './head';
 import { Leg } from './leg';
@@ -10,6 +11,8 @@ import { Scene } from './scene';
 import { Sunglasses } from './sunglasses';
 import { Tail } from './tail';
 import { Wing } from './wing';
+
+const gem: Gem = JSON.parse(document.getElementById('gem')!.textContent!);
 
 const player = new Player(document.getElementById('loop')! as HTMLAudioElement);
 
@@ -36,7 +39,7 @@ const wings = [
 ];
 const tail = new Tail(document.getElementById('tail')!, mode);
 
-const ground = new Ground(document.getElementById('background')!, document.getElementById('foreground')!, mode);
+const ground = new Ground(document.getElementById('background')!, document.getElementById('foreground')!, gem, mode);
 
 const scene = new Scene(mode, [sunglasses, head, ...eyes, mouth, ...arms, ...legs, ...wings, tail, ground]);
 scene.animate();

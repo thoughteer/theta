@@ -1,5 +1,5 @@
 body {
-    background-color: #FFFFFF;
+    background-color: #2B2B2B;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +39,7 @@ body {
 .figure {
     position: absolute;
     left: 50%;
-    top: calc(50% + 8em);
+    top: calc(50% + 12em);
 }
 
 .body {
@@ -497,7 +497,7 @@ body {
 .sunglasses {
     cursor: pointer;
     position: absolute;
-    top: 23em;
+    top: 3em;
 }
 
 .lens-L {
@@ -537,6 +537,6 @@ body {
 
 @keyframes pulse {
     to {
-        opacity: 80%
+        opacity: 50%;
     }
 }

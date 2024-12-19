@@ -6,6 +6,81 @@
         <title>Theta</title>
         <link rel="stylesheet" href="/stylesheets/content.css">
         <link rel="stylesheet" href="/stylesheets/hex.css">
+        <script type="module" src="/libraries/hl.js"></script>
+        <script type="module">
+            const hl = window.$hl;
+
+            const gems = [
+                'Crimson Ruby	#E0115F',
+                'Rose Garnet	#D94D70',
+                'Cerise Spinel	#E52B50',
+                'Flamingo Red Topaz	#FF4500',
+                'Amber Fire Opal	#FF7F50',
+                'Tangerine Carnelian	#F28500',
+                'Golden Citrine	#FFD700',
+                'Sunshine Yellow Diamond	#FFF44F',
+                'Canary Heliodor	#FFEF00',
+                'Spring Green Peridot	#99FF66',
+                'Mint Chrysoprase	#00FA9A',
+                'Grass Emerald	#50C878',
+                'Forest Green Sapphire	#228B22',
+                'Seafoam Jade	#00A36C',
+                'Glacial Aquamarine	#7FFFD4',
+                'Neon Paraiba Tourmaline	#40E0D0',
+                'Ice Blue Diamond	#ADD8E6',
+                'Robin’s Egg Turquoise	#30D5C8',
+                'Sky Blue Topaz	#87CEEB',
+                'Azure Sapphire	#007FFF',
+                'Cornflower Tanzanite	#6A5ACD',
+                'Indigo Iolite	#4B0082',
+                'Violet Amethyst	#8A2BE2',
+                'Grape Purple Spinel	#9370DB',
+                'Peach Morganite	#F4A460',
+                'Blush Pink Diamond	#FFB6C1',
+                'Bubblegum Rose Quartz	#FFC0CB',
+                'Honey Amber	#FFBF00',
+                'Salmon Coral	#FF8C69',
+                'Mystic Alexandrite	#7F00FF',
+            ];
+
+            const [gem, gemColor] = hl.randomElement(gems).split('\t');
+
+            const rarity = Math.min(35, 1 + Math.floor(-Math.log2(1 - hl.random())));
+
+            const gemMask = new Array(144);
+            const gemDensity = rarity / 35;
+            for (let i = 0; i < 35; ++i) {
+                gemMask[i] = i < rarity;
+            }
+            for (let i = 34; i > 0; --i) {
+                const j = hl.randomInt(i + 1);
+                const t = gemMask[i];
+                gemMask[i] = gemMask[j];
+                gemMask[j] = t;
+            }
+            for (let i = 43, j = 34; i >= 0; --i) {
+                if (i < 4 || (i + 5) % 8 === 0) {
+                    gemMask[i] = false;
+                } else {
+                    gemMask[i] = gemMask[j];
+                    --j;
+                }
+            }
+            for (let i = 48; i < gemMask.length; ++i) {
+                gemMask[i] = hl.random() < gemDensity;
+            }
+
+            document.getElementById('gem').textContent = JSON.stringify({
+                color: gemColor,
+                mask: gemMask,
+            });
+
+            hl.token.setName(`Theta #${hl.token.id}`);
+            hl.token.setTraits({
+                Gem: gem,
+                Rarity: rarity,
+            });
+        </script>
         <script type="module" src="/scripts/index.ts"></script>
     </head>
     <body>
@@ -430,7 +505,7 @@
                     </div></div>
                 </div>
             </div>
-            <div id="loader">ϴ</div>
         </div>
+        <div id="gem" hidden></div>
     </body>
 </html>

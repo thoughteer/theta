@@ -32,10 +32,6 @@
     clip-path: polygon(var(--x-shape));
 }
 
-.hex.white {
-    background-color: #FFFFFF;
-}
-
 .hex.black {
     background-color: #2B2B2B;
 }
@@ -45,7 +41,7 @@
 }
 
 .hex.funk {
-    background: linear-gradient(30deg, #1900D97F 25%, #9955FF7F 75%);
+    background: linear-gradient(30deg, #008CFF7F 25%, #8A2BE27F 75%);
 }
 
 .hex.size-0 {

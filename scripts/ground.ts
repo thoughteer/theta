@@ -1,33 +1,45 @@
+import { Gem } from './gem';
 import { Mode } from './mode';
 import { Updatable } from './updatable';
 
 export class Ground implements Updatable {
     b: HTMLElement;
     f: HTMLElement;
+    gem: Gem;
     mode: Mode;
 
     y: number = 0;
 
-    constructor(b: HTMLElement, f: HTMLElement, mode: Mode) {
+    constructor(b: HTMLElement, f: HTMLElement, gem: Gem, mode: Mode) {
         this.b = b;
         this.f = f;
+        this.gem = gem;
         this.mode = mode;
 
+        let k = 0;
         for (const e of [b, f]) {
             for (let row = 0; row < 18; row += 1) {
                 for (let column = 0; column < 4; column += 1) {
                     const hex = document.createElement('div');
-                    hex.classList.add('hex', 'size-5', e === b ? 'white' : 'black');
+                    hex.classList.add('hex', 'size-5');
+                    if (this.gem.mask[k]) {
+                        hex.style.backgroundColor = this.gem.color;
+                    } else {
+                        hex.classList.add('black');
+                    }
 
                     const block = document.createElement('div');
                     block.style.position = 'absolute';
-                    const x = -8 + (32 * column + (row % 2 === 0 ? 0 : 16)) + 4 * (Math.random() - 0.5);
+                    const s = 4;
+                    const x = -8 + (32 * column + (row % 2 === 0 ? 16 : 0)) + s * (Math.random() - 0.5);
                     block.style.left = x + 'em';
-                    const y = 12 + (8 * row) + 4 * (Math.random() - 0.5);
+                    const y = 4 + (8 * row) + s * (Math.random() - 0.5);
                     block.style.top = y + 'em';
                     block.appendChild(hex);
 
                     e.appendChild(block);
+
+                    ++k;
                 }
             }
         }
