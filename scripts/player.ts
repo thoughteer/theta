@@ -1,41 +1,31 @@
+import {Howl} from 'howler';
+
 export class Player {
-    e: HTMLAudioElement;
+    sources: string[];
 
-    silence: HTMLAudioElement = new Audio('./assets/silence.mp3');
-    loaded: boolean = false;
-    iid: number|null = null;
+    loop?: Howl;
+    playing: boolean = false;
 
-    constructor(e: HTMLAudioElement) {
-        this.e = e;
+    constructor(sources: string[]) {
+        this.sources = sources;
     }
 
     toggle(callback: () => void): void {
-        if (this.iid === null) {
-            if (!this.loaded) {
-                this.e.oncanplaythrough = () => {
-                    if (!this.loaded) {
-                        this.loaded = true;
-                        // Play 250 ms of silence first to raise volume up to 100%.
-                        this.silence.onended = () => this.toggle(callback);
-                        this.silence.play();
-                    }
-                };
-                this.e.load();
-                return;
-            } else {
-                this.loop();
-                this.iid = setInterval(() => this.loop(), 18286);
-            }
+        if (!this.loop) {
+            this.loop = new Howl({src: this.sources, loop: true});
+            this.loop.once('load', () => this.toggle(callback));
+            this.loop.load();
+            return;
+        }
+
+        if (!this.playing) {
+            this.playing = true;
+            this.loop.play();
         } else {
-            clearInterval(this.iid);
-            this.e.pause();
-            this.iid = null;
+            this.playing = false;
+            this.loop.pause();
+            this.loop.seek(0);
         }
         callback();
-    }
-
-    loop(): void {
-        this.e.currentTime = 0;
-        this.e.play();
     }
 }

@@ -14,7 +14,7 @@ import { Wing } from './wing';
 
 const gem: Gem = JSON.parse(document.getElementById('gem')!.textContent!);
 
-const player = new Player(document.getElementById('loop')! as HTMLAudioElement);
+const player = new Player(['./assets/funk.aac', './assets/funk.ogg']);
 
 const mode = new Mode(player);
 
